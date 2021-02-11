@@ -24,8 +24,8 @@
     "**/*.tsx"
 , "pages/index.js", 
 "redux/actions/postsActions.ts", 
-"pages/posts/[postId].tsx", 
-"pages/post/new.js", 
+"pages/posts/[postId].js", 
+"pages/post/new.tsx", 
 "redux/reducers/postsReducers.ts"  ],
   "exclude": [
     "node_modules"

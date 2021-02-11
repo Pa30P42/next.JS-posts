@@ -1,16 +1,10 @@
-import React, { FC } from "react";
-import { NextPageContext } from "next";
+import React from "react";
 import usePost from "./hooks/usePost";
 import { store } from "../../redux/store";
 import Form from "../../components/form/Form";
 import PostItem from "../../components/PostItem/PostItem";
 import postsActions from "../../redux/actions/postsActions";
 import Layout from "../../components/Layout";
-import { IPost } from "../../helpers/types";
-
-// interface IChosenPost {
-//   post: IPost;
-// }
 
 const Post = ({ post }) => {
   const { showIsEdit, hideIsEdit, isEdit } = usePost();
@@ -25,9 +19,7 @@ const Post = ({ post }) => {
   );
 };
 
-export async function getServerSideProps({
-  query: { postId },
-}: NextPageContext) {
+export async function getServerSideProps({ query: { postId } }) {
   const posts = await store.getState();
   let result;
   if (posts.posts.length > 0) {
