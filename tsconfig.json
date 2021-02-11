@@ -22,7 +22,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/index.js", "redux/actions/postsActions.ts", "pages/posts/[postId].tsx", "pages/post/new.js", "redux/reducers/postsReducers.ts"  ],
+, "pages/index.js", 
+"redux/actions/postsActions.ts", 
+"pages/posts/[postId].tsx", 
+"pages/post/new.js", 
+"redux/reducers/postsReducers.ts"  ],
   "exclude": [
     "node_modules"
   ]

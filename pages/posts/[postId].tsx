@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { NextPageContext } from "next";
 import usePost from "./hooks/usePost";
 import { store } from "../../redux/store";
 import Form from "../../components/form/Form";
@@ -24,14 +25,15 @@ const Post = ({ post }) => {
   );
 };
 
-export async function getServerSideProps({ query: { postId } }) {
+export async function getServerSideProps({
+  query: { postId },
+}: NextPageContext) {
   const posts = await store.getState();
   let result;
   if (posts.posts.length > 0) {
     const allPosts = posts.posts;
     result = allPosts.find((post) => post.id == postId);
   } else {
-    // as typeof store.dispatch | Dispatch<any>
     await store.dispatch(postsActions.getPosts());
     const posts = await store.getState();
     const allPosts = posts.posts;

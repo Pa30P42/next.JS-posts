@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useIndex from "./hooks/useIndex";
 import PostsLists from "../components/PostsList/PostsList";
 import { wrapper } from "../redux/store";

@@ -29,7 +29,7 @@ type DispatchDeletePost = (arg: IDeletePost) => (IDeletePost)
 type DispatchUpdatePost = (arg: IUpdatePost) => (IUpdatePost)
 
 
-const getPosts = () => async (dispatch:DispatchAllPosts) => {
+const getPosts = () => async  (dispatch) => {
   const res = await axios.get("https://simple-blog-api.crew.red/posts");
 
   const response = res.data;
