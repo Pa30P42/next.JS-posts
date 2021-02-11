@@ -1,8 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import { FormWrapper, Input, Textarea, Label, Button } from "./FormStyled";
+import { IPost } from "../../helpers/types";
 import useForm from "./hooks/useForm";
 
-const Form = ({ hideIsEdit, post, isCreate }) => {
+interface IForm {
+  post: IPost | String;
+  isCreate: Boolean;
+  hideIsEdit: () => void;
+}
+
+const Form: FC<IForm> = ({ hideIsEdit, post, isCreate }) => {
   const {
     title,
     body,

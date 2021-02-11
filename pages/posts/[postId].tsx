@@ -1,10 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import usePost from "./hooks/usePost";
 import { store } from "../../redux/store";
 import Form from "../../components/form/Form";
 import PostItem from "../../components/PostItem/PostItem";
 import postsActions from "../../redux/actions/postsActions";
 import Layout from "../../components/Layout";
+import { IPost } from "../../helpers/types";
+
+// interface IChosenPost {
+//   post: IPost;
+// }
 
 const Post = ({ post }) => {
   const { showIsEdit, hideIsEdit, isEdit } = usePost();
@@ -13,7 +18,7 @@ const Post = ({ post }) => {
       {!isEdit ? (
         <PostItem post={post} showIsEdit={showIsEdit} />
       ) : (
-        <Form post={post} hideIsEdit={hideIsEdit} />
+        <Form isCreate={false} post={post} hideIsEdit={hideIsEdit} />
       )}
     </Layout>
   );
@@ -26,6 +31,7 @@ export async function getServerSideProps({ query: { postId } }) {
     const allPosts = posts.posts;
     result = allPosts.find((post) => post.id == postId);
   } else {
+    // as typeof store.dispatch | Dispatch<any>
     await store.dispatch(postsActions.getPosts());
     const posts = await store.getState();
     const allPosts = posts.posts;

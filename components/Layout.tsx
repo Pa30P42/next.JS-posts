@@ -1,7 +1,13 @@
+import { FC } from "react";
 import Link from "next/link";
 import Head from "next/head";
 
-const Layout = ({ children, title = "Next.js Posts" }) => {
+interface ILayout {
+  children: React.ReactNode;
+  title?: string;
+}
+
+const Layout: FC<ILayout> = ({ children, title = "Next.js Posts" }) => {
   return (
     <>
       <Head>
