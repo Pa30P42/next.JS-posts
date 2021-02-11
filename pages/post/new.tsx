@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import { PageTitle } from "./newStyled";
+import { PageTitle } from "../../styles/newStyled";
 import Form from "../../components/form/Form";
 
 const NewPost = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import usePost from "./hooks/usePost";
+import usePost from "../../components/hooks/usePost";
 import { store } from "../../redux/store";
 import Form from "../../components/form/Form";
 import PostItem from "../../components/PostItem/PostItem";

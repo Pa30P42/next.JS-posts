@@ -1,5 +1,5 @@
 import React from "react";
-import useIndex from "./hooks/useIndex";
+import useIndex from "../components/hooks/useIndex";
 import PostsLists from "../components/PostsList/PostsList";
 import { wrapper } from "../redux/store";
 import Layout from "../components/Layout";
