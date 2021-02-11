@@ -4,9 +4,9 @@ import { IPost } from "../../helpers/types";
 import useForm from "./hooks/useForm";
 
 interface IForm {
-  post: IPost | String;
+  post?: IPost | String;
   isCreate: Boolean;
-  hideIsEdit: () => void;
+  hideIsEdit?: () => void;
 }
 
 const Form: FC<IForm> = ({ hideIsEdit, post, isCreate }) => {
